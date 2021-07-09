@@ -95,10 +95,8 @@ def calcType(counties):
     # Urban: County with more than 400,000 people
     # Suburban: County with more than 250,000 people, which is in the same state and adjacent to a county with 1,000,000 people.
     # Rural: All others.
-    counties['TYPE'] = 'R'
-    counties.loc[counties['POP2020'] > 100000, 'TYPE'] = 'S'
+    counties['TYPE'] = 'X'
     counties.loc[counties['POP2020'] > 400000, 'TYPE'] = 'U'
-    counties.loc[counties['POP2020'] > 1000000, 'TYPE'] = 'M'
 
     return(counties)
 
@@ -117,8 +115,8 @@ def calcDistressed(counties):
     return(counties)
 
 def distressedStats(counties):
-    urban = ((counties['TYPE'] == 'U') | (counties['TYPE'] == 'M'))
-    rural = ((counties['TYPE'] == 'S') | (counties['TYPE'] == 'R'))
+    urban = (counties['TYPE'] == 'U')
+    rural = (counties['TYPE'] == 'X')
 
     distressedApop = counties[counties['DISTRESSED'] == 'A']['POP2020'].sum()
     distressedBpop = counties[counties['DISTRESSED'] == 'B']['POP2020'].sum()
