@@ -1,5 +1,5 @@
 # US Census Data Analysis
-This repository holds my analysis of US Census data.
+This repository holds my analysis of US Census data, including migration trends and distressed counties.
 
 ## Instructions
 To use this file, you will need to download the raw US Census Data here: https://www2.census.gov/programs-surveys/popest/datasets/2010-2020/counties/asrh/CC-EST2020-ALLDATA.csv
@@ -8,6 +8,8 @@ You can run main.py to analyze the US Census Data. If this is your first time ru
 
 ## Purpose
 This script will analyze the population growth data from US counties over the past decade. I have created a Distressed Counties model, which classifies every county as "Distressed", "Watchlist", or "Not Distressed."
+
+The Tableau file (census.twb) will display a county-level map visualization of the distressed counties.
 
 The categories are defined as follows:
 
